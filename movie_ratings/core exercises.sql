@@ -64,7 +64,7 @@ from(
 	--Creating the table that has the average rating of average ratings of movies before 1980.
 	select avg(avgRating) as bfr 
 	from(
-	--Creating the table that has the average rating(s) of movies (in which each one of them is the average of couple of ratings) before 1980.
+	--Creating the table that has the average ratings before 1980.
 	select avg(stars) as avgRating
 	from Rating, Movie
 	where Movie.mID = Rating.mID and year < 1980
@@ -75,7 +75,7 @@ from(
 	--Creating the table that has the average rating of average ratings of movies after 1980.
 	select avg(avgRating) as aftr
 	from(
-	--Creating the table that has the average rating(s) of movies (in which each one of them is the average of couple of ratings) after 1980.
+	--Creating the table that has the average ratings of movies after 1980.
 	select avg(stars) as avgRating
 	from Rating, Movie
 	where Movie.mID = Rating.mID and year > 1980
